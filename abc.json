@@ -1,0 +1,17 @@
+{
+    "name": "datalazyload",
+    "comName":"Datalazyload",
+    "version": "1.0",
+    "desc": "",
+    "tag":"lazyload,kissy-mini",
+    "githubName":"satans17@gmail.com",
+    "author": {
+        "name": "常胤",
+        "email": "changyin@taobao.com",
+        "page": ""
+    },
+	"flexComboPort":"81",
+	"reserveServerPort":"82",
+    "type": "kissy-gallery",
+    "type-url": "http://gallery.kissyui.com/guide"
+}

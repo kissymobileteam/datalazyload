@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+    <title></title>
+    <link rel="stylesheet" href="http://docs.kissyui.com/1.4/docs/html/_static/bootstrap.css"/>
+
+    <style>
+        body{
+            margin:0 2em;
+        }
+    </style>
+</head>
+<body>
+
+<h1>DataLazyload for KISSY MINI</h1>
+
+<p>v0.01</p>
+
+<div class="section">
+    <h3>Configs</h3>
+    <dl class="data">
+        <dt>threshold </dt>
+        <dd>
+            <p>{Number} - 可选，设置后可以提前加载视窗意外的内容，提升体验</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>event </dt>
+        <dd>
+            <p>{String} - 可选，响应的事件，默认 "scroll touchmove resize"</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>container </dt>
+        <dd>
+            <p>{dom} - 可选，不设置则为document.body</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>attribute </dt>
+        <dd>
+            <p>{String} - 可选，设置需要lazyload的属性名，默认为data-ks-lazyload</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>duration </dt>
+        <dd>
+            <p>{Number} - 可选，延迟触发事件，默认 300ms</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>load </dt>
+        <dd>
+            <p>{Function} - 可选，每加载一个元素就会触发一次这个回调</p>
+        </dd>
+    </dl>
+
+
+    <dl class="data">
+        <dt>complete </dt>
+        <dd>
+            <p>{Function} - 可选，所有元素加载完成后会触发此回调</p>
+        </dd>
+    </dl>
+</div>
+
+
+
+<div class="section">
+    <h3>Methods</h3>
+
+
+
+    <dl class="data">
+        <dt>refresh() </dt>
+        <dd>
+            <p>强制立刻检测懒加载元素</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>pause() </dt>
+        <dd>
+            <p>暂停监控懒加载元素</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>resume() </dt>
+        <dd>
+            <p>继续监控懒加载元素</p>
+        </dd>
+    </dl>
+
+    <dl class="data">
+        <dt>destroy() </dt>
+        <dd>
+            <p>停止监控并销毁组件</p>
+        </dd>
+    </dl>
+
+</div>
+
+
+
+<section>
+    <h3>示例</h3>
+<pre>
+KISSY.use('gallery/datalazyload/1.0/index', function (S, Datalazyload) {
+
+    new DataLazyLoad({
+        load: function(el){
+            console.log(el);
+        },
+        complete: function(){
+            alert("加载完毕");
+        }
+
+    });
+
+})
+</pre>
+</section>
+
+
+
+<section>
+    <h3>DEMO</h3>
+    <ul>
+        <li><a href="demo1.html">普通demo</a></li>
+        <li><a href="demo2.html">横向测试</a></li>
+        <li><a href="demo3.html">淘宝detail</a></li>
+    </ul>
+</section>
+
+
+<section>
+    <h3>移动设备测试</h3>
+    <p>
+        <img width="200" height="200" src="http://ma.taobao.com/qrcode/qrcode.do?activity=preview&text=http%253A%252F%252Fchangyin.demo.taobao.net%252Fdatalazyload%252F&width=300&height=300&characterSet=gbk&channel_id&channel_name=">
+    </p>
+</section>
+
+
+</body>
+</html>

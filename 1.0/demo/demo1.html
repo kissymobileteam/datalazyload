@@ -1,0 +1,81 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>Datalazyload的demo</title>
+    <script type="text/javascript" src="http://g.tbcdn.cn/kissy/m/0.2.0/mini-full.js"></script>
+</head>
+<body>
+<h2>Datalazyload的demo</h2>
+
+
+
+
+
+<p>
+    0.<img data-ks-lazyload="http://gtms01.alicdn.com/tps/i1/T1eB2WFf4aXXch9Szl-190-50.png">
+</p>
+
+<p>
+    1.<img data-ks-lazyload="http://gtms01.alicdn.com/tps/i1/T1eB2WFf4aXXch9Szl-190-50.png">
+</p>
+
+<p>
+    2.<img data-ks-lazyload="http://gtms01.alicdn.com/tps/i1/T1eB2WFf4aXXch9Szl-190-50.png">
+</p>
+
+
+<p>
+    3.<img data-ks-lazyload="http://gtms01.alicdn.com/tps/i1/T1eB2WFf4aXXch9Szl-190-50.png">
+</p>
+
+
+<p>
+    4.<img data-ks-lazyload="http://gtms01.alicdn.com/tps/i1/T1eB2WFf4aXXch9Szl-190-50.png">
+</p>
+
+<p>
+    <textarea data-ks-lazyload="">
+        textarea
+        <script>alert("textarea");</script>
+
+    </textarea>
+
+</p>
+
+
+
+
+<script>
+    var S = KISSY;
+    var srcPath = "../../";
+    S.config({
+        debug: true,
+        packages:[
+            {
+                name:"gallery/datalazyload",
+                path:srcPath,
+                charset:"utf-8",
+                ignorePackageNameInUri:true
+            }
+        ]
+    });
+
+    S.use('gallery/datalazyload/1.0/index', function (S, Datalazyload) {
+        new Datalazyload({
+            //加载完成一个元素触发一次。。
+            load: function(el){
+                console.log(el);
+            },
+            complete: function(){
+                alert("全部加载完成了");
+            }
+        });
+    })
+</script>
+
+
+
+
+</body>
+</html>
